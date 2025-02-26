@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,14 +14,14 @@
             --gray: #64748b;
             --dark: #1e293b;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
             background-color: var(--background);
             color: var(--light);
@@ -28,7 +29,7 @@
             display: flex;
             flex-direction: column;
         }
-        
+
         .app-container {
             display: flex;
             flex-direction: column;
@@ -38,7 +39,7 @@
             margin: 0 auto;
             padding: 24px;
         }
-        
+
         .header {
             display: flex;
             justify-content: space-between;
@@ -46,7 +47,7 @@
             padding-bottom: 20px;
             border-bottom: 1px solid var(--dark);
         }
-        
+
         .logo {
             font-weight: 700;
             font-size: 1.5rem;
@@ -55,12 +56,12 @@
             align-items: center;
             gap: 8px;
         }
-        
+
         .controls {
             display: flex;
             gap: 12px;
         }
-        
+
         .control-btn {
             background-color: var(--dark);
             color: var(--light);
@@ -74,19 +75,19 @@
             cursor: pointer;
             transition: all 0.2s ease;
         }
-        
+
         .control-btn:hover {
             background-color: var(--gray);
         }
-        
+
         .control-btn.active {
             background-color: var(--primary);
         }
-        
+
         .control-btn.danger {
             background-color: #ef4444;
         }
-        
+
         .main-content {
             flex: 1;
             display: flex;
@@ -94,7 +95,7 @@
             gap: 24px;
             height: 100%;
         }
-        
+
         .video-container {
             display: flex;
             flex-wrap: wrap;
@@ -103,7 +104,7 @@
             height: 100%;
             position: relative;
         }
-        
+
         .video-box {
             position: relative;
             border-radius: 12px;
@@ -115,20 +116,20 @@
             width: calc(50% - 12px);
             aspect-ratio: 16/9;
         }
-        
+
         .video-box.fullscreen {
             position: absolute;
             width: 100%;
             height: 100%;
             z-index: 10;
         }
-        
+
         .video-box video {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
+
         .video-box .label {
             position: absolute;
             bottom: 16px;
@@ -141,7 +142,7 @@
             align-items: center;
             gap: 8px;
         }
-        
+
         .video-box .mic-status {
             position: absolute;
             top: 16px;
@@ -153,7 +154,7 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         .footer {
             display: flex;
             justify-content: space-between;
@@ -161,7 +162,7 @@
             padding-top: 20px;
             border-top: 1px solid var(--dark);
         }
-        
+
         .meeting-info {
             display: flex;
             align-items: center;
@@ -169,18 +170,18 @@
             color: var(--gray);
             font-size: 14px;
         }
-        
+
         .time {
             background-color: var(--dark);
             padding: 6px 12px;
             border-radius: 20px;
         }
-        
+
         .actions {
             display: flex;
             gap: 12px;
         }
-        
+
         .action-btn {
             padding: 8px 16px;
             border-radius: 8px;
@@ -192,45 +193,48 @@
             align-items: center;
             gap: 8px;
         }
-        
+
         .action-btn.primary {
             background-color: var(--primary);
             color: white;
         }
-        
+
         .action-btn.primary:hover {
             background-color: #2563eb;
         }
-        
+
         .action-btn.secondary {
             background-color: var(--dark);
             color: var(--light);
         }
-        
+
         .action-btn.secondary:hover {
             background-color: var(--gray);
         }
-        
+
         @media (max-width: 768px) {
             .video-box {
                 width: 100%;
             }
-            
-            .actions, .controls {
+
+            .actions,
+            .controls {
                 gap: 8px;
             }
-            
+
             .action-btn {
                 padding: 8px;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="app-container">
         <div class="header">
             <div class="logo">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M23 7l-7 5 7 5V7z"></path>
                     <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
                 </svg>
@@ -238,7 +242,8 @@
             </div>
             <div class="controls">
                 <button class="control-btn active" id="mic-btn" title="Mute">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
                         <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
                         <line x1="12" y1="19" x2="12" y2="23"></line>
@@ -246,20 +251,23 @@
                     </svg>
                 </button>
                 <button class="control-btn active" id="video-btn" title="Turn off video">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://wwwwww.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polygon points="23 7 16 12 23 17 23 7"></polygon>
                         <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
                     </svg>
                 </button>
                 <button class="control-btn" id="screen-btn" title="Share screen">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
                         <line x1="8" y1="21" x2="16" y2="21"></line>
                         <line x1="12" y1="17" x2="12" y2="21"></line>
                     </svg>
                 </button>
                 <button class="control-btn danger" id="end-btn" title="End call">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                         <circle cx="8.5" cy="7" r="4"></circle>
                         <line x1="18" y1="8" x2="23" y2="13"></line>
@@ -268,20 +276,24 @@
                 </button>
             </div>
         </div>
-        
+
         <div class="main-content">
             <div class="video-container">
                 <div class="video-box" id="my-video-box">
                     <video id="my-video" autoplay muted playsinline></video>
                     <div class="label">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
                             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                             <circle cx="12" cy="7" r="4"></circle>
                         </svg>
                         You
                     </div>
                     <div class="mic-status">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
                             <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
                             <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
                             <line x1="12" y1="19" x2="12" y2="23"></line>
@@ -292,14 +304,18 @@
                 <div class="video-box" id="other-video-box">
                     <video id="other-video" autoplay playsinline></video>
                     <div class="label">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
                             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                             <circle cx="12" cy="7" r="4"></circle>
                         </svg>
                         John Doe
                     </div>
                     <div class="mic-status">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
                             <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
                             <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
                             <line x1="12" y1="19" x2="12" y2="23"></line>
@@ -309,7 +325,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="footer">
             <div class="meeting-info">
                 <div class="meeting-id">Meeting ID: 840-951-627</div>
@@ -317,14 +333,18 @@
             </div>
             <div class="actions">
                 <button class="action-btn secondary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
                         <path d="M14 9l6 6-6 6"></path>
                         <path d="M4 4v7a4 4 0 0 0 4 4h11"></path>
                     </svg>
                     Invite
                 </button>
                 <button class="action-btn primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
                         <circle cx="12" cy="12" r="10"></circle>
                         <circle cx="12" cy="12" r="3"></circle>
                     </svg>
@@ -335,31 +355,82 @@
     </div>
 
     <script>
+        let myStream; //  Keep track of the camera stream
+
+        async function setupCamera() {
+            const myVideo = document.getElementById('my-video');
+            const videoBtn = document.getElementById('video-btn');
+
+            try {
+                myStream = await navigator.mediaDevices.getUserMedia({
+                    video: true,
+                    audio: false
+                });
+                myVideo.srcObject = myStream;
+            } catch (error) {
+                console.error("Error accessing camera:", error);
+                alert("Unable to access camera.  Please check permissions.");
+            }
+
+            videoBtn.addEventListener('click', () => {
+                toggleCamera(videoBtn);
+            });
+        }
+
+        function toggleCamera(videoBtn) {
+            if (myStream) {
+                const videoTrack = myStream.getVideoTracks()[0];
+                const isEnabled = videoTrack.enabled;
+
+                if (isEnabled) {
+                    videoTrack.enabled = false;
+                    videoBtn.classList.remove('active');
+                    videoBtn.title = "Turn on video";
+                    videoBtn.innerHTML = `
+                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="2" y1="2" x2="22" y2="22"></line>
+                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                         </svg>
+                    `; // Update icon
+                } else {
+                    videoTrack.enabled = true;
+                    videoBtn.classList.add('active');
+                    videoBtn.title = "Turn off video";
+                    videoBtn.innerHTML = `
+                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                         </svg>
+                    `; // Update icon
+                }
+            }
+        }
+
+
         // Mock video streams with placeholders
         function setupMockVideos() {
-            const myVideo = document.getElementById('my-video');
             const otherVideo = document.getElementById('other-video');
-            
+
             // Create canvas for mock video
             const createMockStream = (color) => {
                 const canvas = document.createElement('canvas');
                 canvas.width = 640;
                 canvas.height = 360;
                 const ctx = canvas.getContext('2d');
-                
+
                 // Draw gradient background
                 const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
                 gradient.addColorStop(0, color);
                 gradient.addColorStop(1, '#0f172a');
                 ctx.fillStyle = gradient;
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
-                
+
                 // Return canvas stream
                 return canvas.captureStream(30);
             };
-            
+
             // Set mock streams
-            myVideo.srcObject = createMockStream('#3a86ff');
             otherVideo.srcObject = createMockStream('#8338ec');
         }
 
@@ -367,11 +438,11 @@
         function setupVideoBoxInteraction() {
             const myVideoBox = document.getElementById('my-video-box');
             const otherVideoBox = document.getElementById('other-video-box');
-            
+
             myVideoBox.addEventListener('click', () => {
                 toggleFullscreen(myVideoBox);
             });
-            
+
             otherVideoBox.addEventListener('click', () => {
                 toggleFullscreen(otherVideoBox);
             });
@@ -393,22 +464,22 @@
         // Setup control buttons
         function setupControls() {
             const micBtn = document.getElementById('mic-btn');
-            const videoBtn = document.getElementById('video-btn');
             const screenBtn = document.getElementById('screen-btn');
             const endBtn = document.getElementById('end-btn');
-            
+
             micBtn.addEventListener('click', () => {
                 micBtn.classList.toggle('active');
                 if (!micBtn.classList.contains('active')) {
                     micBtn.innerHTML = `
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="1" y1="1" x2="23" y2="23"></line>
-                            <path d="M9 9v3a3 3 0 0 0 5.12 2.12M15 9.34V4a3 3 0 0 0-5.94-.6"></path>
-                            <path d="M17 16.95A7 7 0 0 1 5 12v-2m14 0v2a7 7 0 0 1-.11 1.23"></path>
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
                             <line x1="12" y1="19" x2="12" y2="23"></line>
                             <line x1="8" y1="23" x2="16" y2="23"></line>
+                            <line x1="1" y1="1" x2="23" y2="23"></line>
                         </svg>
                     `;
+                    micBtn.title = "Unmute";
                 } else {
                     micBtn.innerHTML = `
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -418,63 +489,27 @@
                             <line x1="8" y1="23" x2="16" y2="23"></line>
                         </svg>
                     `;
+                    micBtn.title = "Mute";
                 }
             });
-            
-            videoBtn.addEventListener('click', () => {
-                videoBtn.classList.toggle('active');
-                const myVideo = document.getElementById('my-video');
-                
-                if (!videoBtn.classList.contains('active')) {
-                    videoBtn.innerHTML = `
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2m5.66 0H14a2 2 0 0 1 2 2v3.34l1 1L23 7v10"></path>
-                            <line x1="1" y1="1" x2="23" y2="23"></line>
-                        </svg>
-                    `;
-                    myVideo.style.display = 'none';
-                } else {
-                    videoBtn.innerHTML = `
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                        </svg>
-                    `;
-                    myVideo.style.display = 'block';
-                }
-            });
-            
+
             screenBtn.addEventListener('click', () => {
-                screenBtn.classList.toggle('active');
+                alert('Screen sharing not implemented in this example.');
             });
-            
+
             endBtn.addEventListener('click', () => {
-                alert('Call ended');
+                alert('Call ending not implemented in this example.');
             });
         }
 
-        // Initialize timer
-        function initTimer() {
-            const timeElement = document.querySelector('.time');
-            let seconds = 0;
-            
-            setInterval(() => {
-                seconds++;
-                const hours = Math.floor(seconds / 3600);
-                const minutes = Math.floor((seconds % 3600) / 60);
-                const secs = seconds % 60;
-                
-                timeElement.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-            }, 1000);
-        }
-
-        // Initialize everything when page loads
-        window.addEventListener('DOMContentLoaded', () => {
-            setupMockVideos();
-            setupVideoBoxInteraction();
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
             setupControls();
-            initTimer();
+            setupVideoBoxInteraction();
+            setupMockVideos(); // Keep mock video for other user
+            setupCamera(); //  Initialize camera
         });
     </script>
 </body>
+
 </html>
