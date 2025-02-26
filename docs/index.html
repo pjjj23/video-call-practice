@@ -230,24 +230,9 @@
      <!-- Firebase SDK (replace with your actual config) -->
      <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
      <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
- 
-     <script>
-         // Your web app's Firebase configuration
-         const firebaseConfig = {
-            apiKey: "AIzaSyDLcft2Kv2n_mp-AXRccIpYXi-gqOM89-o",
-            authDomain: "pipeline-sirteo.firebaseapp.com",
-            projectId: "pipeline-sirteo",
-            storageBucket: "pipeline-sirteo.firebasestorage.app",
-            messagingSenderId: "955821809232",
-            appId: "1:955821809232:web:90d8392858ae19093c7b55"
-         };
- 
-         // Initialize Firebase
-         const app = firebase.initializeApp(firebaseConfig);
-         const db = firebase.firestore();
-         const auth = firebase.auth();
-     </script>
+     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script> 
+     <script type="module" src="./firebaseConfig.js"></script>
+    </head>
 </head>
 
 <body>
